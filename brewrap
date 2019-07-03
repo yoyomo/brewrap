@@ -11,4 +11,8 @@ if [ ! -d versions ]; then
 	mkdir versions
 fi
 
-tar --exclude='./.git' --exclude='./README.md' --exclude='./versions' -zcvf "versions/v$version.tar.gz" .
+tar_file_name=versions/v$version.tar.gz
+
+tar --exclude='./.git' --exclude='./README.md' --exclude='./versions' -zcvf $tar_file_name .
+
+openssl dgst -sha256 $tar_file_name
