@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$#" -lt 1 ]; then
+  echo "Usage: brewrap VERSION"
+  exit 1;
+fi
+
+version=$1
+
+if [ ! -d versions ]; then
+	mkdir versions
+fi
+
+tar --exclude='./.git' --exclude='./README.md' --exclude='./versions' -zcvf "versions/v$version.tar.gz" .
