@@ -1,2 +1,2 @@
-# package
-package a project ready for brew
+# brewrap
+wrap a project ready for brew
